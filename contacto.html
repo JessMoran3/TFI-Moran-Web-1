@@ -7,23 +7,69 @@
     </head>
     <body>
         <header>
-            <p>
-                <h1>Contactate conmigo</h1>
-            
-            </p>
+            <h1>Mi pelu online</h1>
+            <p>Un lugar pensado para vos</p>
+
         </header>
 
         <nav>
             <a href="index.html">Inicio</a>
             <a href="servicios.html">Servicios</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="contacto.html"class="activo">Contacto</a>
         </nav>
 
         <main>
+            
+            <section>
+                <h2>Contactanos</h2>
+                <p>
+                    ¿Tenés alguna consulta o querés conocer más sobre nuestros
+                    servicios? Completá el formulario y nos pondremos en contacto.
+                </p>
+            </section>
+
+            <section>
+                <h2>Enviá tu consulta</h2>
+
+                <form id="form-contacto" novalidate>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <small id="error-nombre"></small>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <small id="error-email"></small>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <small id="error-telefono"></small>
+
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                    <small id="error-asunto"></small>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                    <small id="error-mensaje"></small>
+
+                    <button type="submit">Enviar consulta</button>
+
+                </form>
+
+                <div id="resultado-formulario" aria-live="polite"></div>
+            </section>
 
         </main>
         <footer>
+             <h3>Mi pelu online</h3>
+            <p>Un lugar pensado para vos.</p>
+            <p>Gracias por visitarnos.</p>
 
+            <p class="copyright">
+                © 2026 Mi pelu online - Todos los derechos reservados.
+             </p>
         </footer>
+        <script src="js/script.js"></script>
     </body>
 </html>

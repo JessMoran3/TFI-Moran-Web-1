@@ -266,3 +266,20 @@ footer p {
         height: 250px;
     }
 }
+/* TABLA DE PRECIOS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e8d8c8;
+}
+
+th {
+    color: #765d4d;
+}

@@ -19,14 +19,19 @@ const imagenes = [
     }
 ];
 
+//Buscamos en el html el id del carrusel y btns y lo asiggnamos a las variabes para poder trabajar con esos elementos aca
+
+const imagenCarrusel = document.getElementById("imagen-carrusel");
+const botonAnterior = document.getElementById("anterior");
+const botonSiguiente = document.getElementById("siguiente");
+
+if (imagenCarrusel && botonAnterior && botonSiguiente) {
+
 //guardamos el indice en una variable, empieza en 0, es decir la primera imagen
 
 let indiceActual = 0;
 
-<!--Buscamos en el html el id del carrusel y btns y lo asiggnamos a las variabes para poder trabajar con esos elementos aca-->
-const imagenCarrusel = document.getElementById("imagen-carrusel");
-const botonAnterior = document.getElementById("anterior");
-const botonSiguiente = document.getElementById("siguiente");
+
 
 //Funcionalidad del carrusel
 
@@ -50,6 +55,7 @@ botonSiguiente.addEventListener("click", function() {
     carrusel();
 });
 
+
 botonAnterior.addEventListener("click", function()
     {
     indiceActual--;
@@ -60,3 +66,77 @@ botonAnterior.addEventListener("click", function()
         }
         carrusel();
 });
+}
+// VALIDACIÓN DEL FORMULARIO DE CONTACTO
+
+const formulario = document.getElementById("form-contacto");
+
+if (formulario) {
+
+    formulario.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        // Obtenemos los valores de los campos
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const asunto = document.getElementById("asunto").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        // Obtenemos los lugares donde mostraremos los errores
+        const errorNombre = document.getElementById("error-nombre");
+        const errorEmail = document.getElementById("error-email");
+        const errorTelefono = document.getElementById("error-telefono");
+        const errorAsunto = document.getElementById("error-asunto");
+        const errorMensaje = document.getElementById("error-mensaje");
+
+        // Limpiamos los errores anteriores
+        errorNombre.textContent = "";
+        errorEmail.textContent = "";
+        errorTelefono.textContent = "";
+        errorAsunto.textContent = "";
+        errorMensaje.textContent = "";
+
+        let formularioValido = true;
+
+        // Validar nombre
+        if (nombre.length < 2 || nombre.length > 40) {
+            errorNombre.textContent = "El nombre debe tener entre 2 y 40 caracteres.";
+            formularioValido = false;
+        }
+
+        // Validar email
+        const patronEmail = /^\w+@\w+(\.\w{2,4})+$/;
+
+        if (!patronEmail.test(email)) {
+            errorEmail.textContent = "Ingresá un correo electrónico válido.";
+            formularioValido = false;
+        }
+
+        // Validar teléfono
+        const patronTelefono = /^[0-9]{8,15}$/;
+
+        if (!patronTelefono.test(telefono)) {
+            errorTelefono.textContent = "Ingresá un teléfono de entre 8 y 15 números.";
+            formularioValido = false;
+        }
+
+        // Validar asunto
+        if (asunto.length < 3 || asunto.length > 50) {
+            errorAsunto.textContent = "El asunto debe tener entre 3 y 50 caracteres.";
+            formularioValido = false;
+        }
+
+        // Validar mensaje
+        if (mensaje.length < 10 || mensaje.length > 300) {
+            errorMensaje.textContent = "El mensaje debe tener entre 10 y 300 caracteres.";
+            formularioValido = false;
+        }
+
+        if (formularioValido) {
+            console.log("Formulario válido.");
+        }
+
+    });
+}
