@@ -67,6 +67,7 @@ botonAnterior.addEventListener("click", function()
         carrusel();
 });
 }
+
 // VALIDACIÓN DEL FORMULARIO DE CONTACTO
 
 const formulario = document.getElementById("form-contacto");
@@ -100,13 +101,15 @@ if (formulario) {
 
         let formularioValido = true;
 
-        // Validar nombre
+        //Validaciones
+
+        // nombre
         if (nombre.length < 2 || nombre.length > 40) {
             errorNombre.textContent = "El nombre debe tener entre 2 y 40 caracteres.";
             formularioValido = false;
         }
 
-        // Validar email
+        // email
         const patronEmail = /^\w+@\w+(\.\w{2,4})+$/;
 
         if (!patronEmail.test(email)) {
@@ -114,7 +117,7 @@ if (formulario) {
             formularioValido = false;
         }
 
-        // Validar teléfono
+        // teléfono
         const patronTelefono = /^[0-9]{8,15}$/;
 
         if (!patronTelefono.test(telefono)) {
@@ -122,21 +125,51 @@ if (formulario) {
             formularioValido = false;
         }
 
-        // Validar asunto
+        //asunto
         if (asunto.length < 3 || asunto.length > 50) {
             errorAsunto.textContent = "El asunto debe tener entre 3 y 50 caracteres.";
             formularioValido = false;
         }
 
-        // Validar mensaje
+        // Mensaje
         if (mensaje.length < 10 || mensaje.length > 300) {
             errorMensaje.textContent = "El mensaje debe tener entre 10 y 300 caracteres.";
             formularioValido = false;
         }
 
         if (formularioValido) {
-            console.log("Formulario válido.");
+
+            const resultado = document.getElementById("resultado-formulario");
+
+            resultado.innerHTML = "";
+
+            const titulo = document.createElement("h3");
+            titulo.textContent = "Consulta enviada correctamente";
+
+            const datos = document.createElement("p");
+            datos.textContent = "Nombre: " + nombre;
+
+            const correo = document.createElement("p");
+            correo.textContent = "Email: " + email;
+
+            const telefonoTexto = document.createElement("p");
+            telefonoTexto.textContent = "Teléfono: " + telefono;
+
+            const asuntoTexto = document.createElement("p");
+            asuntoTexto.textContent = "Asunto: " + asunto;
+
+            const mensajeTexto = document.createElement("p");
+            mensajeTexto.textContent = "Mensaje: " + mensaje;
+
+            resultado.appendChild(titulo);
+            resultado.appendChild(datos);
+            resultado.appendChild(correo);
+            resultado.appendChild(telefonoTexto);
+            resultado.appendChild(asuntoTexto);
+            resultado.appendChild(mensajeTexto);
+
+            formulario.reset();
         }
 
-    });
+            });
 }
