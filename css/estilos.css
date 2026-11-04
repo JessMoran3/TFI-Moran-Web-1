@@ -107,7 +107,22 @@ ul {
 li {
     margin-bottom: 8px;
 }
+/* 6. COLUMNAS DE SERVICIOS */
 
+#contenedor-servicios {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#contenedor-servicios article {
+    flex: 1 1 250px;
+    background-color: #faf7f2;
+    padding: 20px;
+    border-radius: 8px;
+}
 /* 6. ENLACES Y BOTONES */
 
 a {
