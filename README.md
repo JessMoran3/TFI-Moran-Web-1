@@ -14,11 +14,11 @@ El sitio busca ofrecer un espacio donde cada persona pueda conocer los servicios
 
 
 
-\*\*Estudiante:\*\* Jessica Moran  
+\*\*Estudiante:\*\* Jessica Moran
 
-\*\*Asignatura:\*\* Programación Web 1  
+\*\*Asignatura:\*\* Programación Web 1
 
-\*\*Carrera:\*\* Tecnicatura Universitaria en Desarrollo de Software  
+\*\*Carrera:\*\* Tecnicatura Universitaria en Desarrollo de Software
 
 \*\*Institución:\*\* Universidad de La Punta
 
@@ -72,7 +72,5 @@ El sitio busca ofrecer un espacio donde cada persona pueda conocer los servicios
 
 
 
-\*\*Repositorio:\*\* https://github.com/TU-USUARIO/TFI-Moran-Web-1
-
-
+\*\*Repositorio:\*\* https://github.com/JessMoran3/TFI-Moran-Web-1
 
